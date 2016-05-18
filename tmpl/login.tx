@@ -1,0 +1,28 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<h2 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Login</h2>
+<br/>
+<p><: $message :></p>
+<hr />
+
+<div class="col-lg-4">
+<form action="<: uri_for('login_pos') :>" method="post" />
+  <table border="0">
+    <tr>
+      <td align="right"><b> ID：</b></td>
+      <td><input type="text" name="id" value=""/></td>
+    </tr>
+    <tr>
+      <td align="right"><b> PASSWORD：</b></td>
+      <td><input type="password" name="pass" value=""/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td> <input type="submit" value="送信"></td>
+    </tr>
+  </table>
+</form>
+</div>
+: }

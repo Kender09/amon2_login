@@ -90,6 +90,6 @@
 <form method="post" action="/reset_counter">
     <input type="submit" name="Reset counter." class="btn btn-default">
 </form>
-     
+
 
 : }
