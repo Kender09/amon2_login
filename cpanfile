@@ -2,6 +2,7 @@ requires 'Amon2', '6.13';
 requires 'Crypt::CBC';
 requires 'Crypt::Rijndael';
 requires 'DBD::SQLite', '1.33';
+requires 'DBD::mysql', '1.33';
 requires 'HTML::FillInForm::Lite', '1.11';
 requires 'HTTP::Session2', '1.03';
 requires 'JSON', '2.50';
@@ -14,6 +15,7 @@ requires 'Test::WWW::Mechanize::PSGI';
 requires 'Text::Xslate', '2.0009';
 requires 'Time::Piece', '1.20';
 requires 'perl', '5.010_001';
+requires 'DBI', '1.62';
 
 on configure => sub {
     requires 'Module::Build', '0.38';

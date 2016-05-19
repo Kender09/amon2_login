@@ -2,6 +2,28 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Sign UP</h1>
+<h3 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Sign UP</h3>
+<br/>
+<p><: $message :></p>
+<hr />
+
+<div class="col-lg-4">
+<form action="<: uri_for('sign_up_pos') :>" method="post" />
+  <table border="0">
+    <tr>
+      <td align="right"><b> ID：</b></td>
+      <td><input type="text" name="id" value=""/></td>
+    </tr>
+    <tr>
+      <td align="right"><b> PASSWORD：</b></td>
+      <td><input type="password" name="pass" value=""/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td> <input type="submit" value="登録"></td>
+    </tr>
+  </table>
+</form>
+</div>
 
 : }

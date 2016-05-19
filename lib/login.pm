@@ -6,6 +6,7 @@ our $VERSION='0.01';
 use 5.008001;
 use login::DB::Schema;
 use login::DB;
+use DBI;
 
 use parent qw/Amon2/;
 # Enable project local mode.
@@ -18,14 +19,15 @@ sub db {
     if (!exists $c->{db}) {
         my $conf = $c->config->{DBI}
             or die "Missing configuration about DBI";
-        $c->{db} = login::DB->new(
-            schema       => $schema,
-            connect_info => [@$conf],
+        $c->{db} =   DBI->connect(@$conf);
+        # $c->{db} = login::DB->new(
+            # schema       => $schema,
+            # connect_info => [@$conf],
             # I suggest to enable following lines if you are using mysql.
             # on_connect_do => [
             #     'SET SESSION sql_mode=STRICT_TRANS_TABLES;',
             # ],
-        );
+        # );
     }
     $c->{db};
 }
@@ -44,4 +46,3 @@ This is a main context class for login
 =head1 AUTHOR
 
 login authors.
-
